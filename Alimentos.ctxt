@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=nombre\ gproteinas\ gcarbohidratos\ ggrasas
+comment0.target=Alimentos(java.lang.String,\ int,\ int,\ int)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Alimentos\r\n
+comment1.params=
+comment1.target=void\ muestraDatos()
+comment1.text=\r\nmuestras\ todos\ los\ datos\ de\ ese\ alimento\ \r\n\ \r\n
+comment2.params=
+comment2.target=void\ componentesMasaltos()
+comment2.text=\r\n\ calculo\ de\ cual\ tiene\ mayor\ cantidad\ en\ gramos\r\n
+numComments=3
