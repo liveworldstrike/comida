@@ -45,7 +45,7 @@ public class Alimentos
         System.out.println("Grasas por cada 100 gramos:"+ calorias);
         componentesMasaltos();
     }
-    
+
     /**
      * calculo de cual tiene mayor cantidad en gramos
      */
@@ -80,7 +80,32 @@ public class Alimentos
             System.out.println("Componente/s mayoritario/s :Carbohidratos y grasas");
         }
     }
-    
-    
-    
+
+    /**   
+     * devuelve los gramos de proteinas
+     */
+
+    public float getGproteinas()
+    {
+        return gproteinas;
+    }
+
+    /**   
+     * devuelve los gramos de hidratos
+     */
+
+    public float getGcarbohidratos()
+    {
+        return gcarbohidratos;
+    }
+
+    /**   
+     * devuelve los gramos de grasas
+     */
+    public float getGgrasas()
+    {
+        return ggrasas;
+    }
+
+
 }
