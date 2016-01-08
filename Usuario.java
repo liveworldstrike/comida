@@ -27,6 +27,7 @@ public class Usuario
         this.proteinasUser = 0;
         this.gcarbohidratosUser = 0;
         this.ggrasasUser = 0;
+        this.caloriasUsertotales = 0;
     }
 
     /**
