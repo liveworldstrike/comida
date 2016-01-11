@@ -67,7 +67,7 @@ public class Usuario
     {
         return caloriasIngeridas;
     }
-    
+
     /**
      * devuelve el nombre completo de usuario
      */
@@ -97,5 +97,7 @@ public class Usuario
 
         }
     }
+    
+    
 }
 
