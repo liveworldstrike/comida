@@ -1,11 +1,20 @@
 #BlueJ class context
-comment0.params=user
+comment0.params=nombreCompleto
 comment0.target=Usuario(java.lang.String)
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Usuario\r\n
-comment1.params=comida\ cantidad
-comment1.target=void\ comida(Alimentos,\ float)
-comment1.text=\r\n\ metodo\ para\ dar\ de\ comer\ al\ usuario\ la\ cantidad\ de\ alimentos\r\n
+comment0.text=\r\nConstructor\ de\ la\ clase\ usuario\r\n
+comment1.params=alimentoQueCome\ gramosDelAlimento
+comment1.target=void\ comer(Alimentos,\ float)
+comment1.text=\r\n\ Metodo\ utilizado\ para\ dar\ de\ comer\ al\ usuario\r\n
 comment2.params=
 comment2.target=void\ muestraDatos()
-comment2.text=\r\nmuestras\ todos\ los\ datos\ del\ usuario\ que\ ha\ comido\r\n\ \r\n
-numComments=3
+comment2.text=\r\n\ Metodo\ que\ muestra\ la\ informacion\ de\ lo\ ingerido\ por\ el\ usuario.\r\n
+comment3.params=
+comment3.target=float\ getCaloriasIngeridas()
+comment3.text=\r\n\ Devuelve\ los\ gramos\ de\ calorias\ ingeridas\r\n
+comment4.params=
+comment4.target=java.lang.String\ getNombreCompleto()
+comment4.text=\r\n\ devuelve\ el\ nombre\ completo\ de\ usuario\r\n
+comment5.params=usuario2
+comment5.target=void\ comparar(Usuario)
+comment5.text=\r\n\ metodo\ que\ compara\ las\ calorias\ ingeridas\ por\ cada\ usuario\ y\ ns\ da\ a\ conocer\ las\ diferrencas\r\n
+numComments=6

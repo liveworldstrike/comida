@@ -1,72 +1,101 @@
 
-/**
- * Write a description of class Usuario here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Usuario
 {
-    // nombre completo del usuario 
-    private String user;
-    // almacena los gramos de proteinas del usuario
-    private float proteinasUser;
-    // almacena los gramos de carbohidratos del usuario
-    private float gcarbohidratosUser;
-    // almacena los gramos de grasas del usuario
-    private float ggrasasUser;
-    //almacena calorias del usuario
-    private float caloriasUsertotales;
-    // porciento de los gramos de proteinas del usuario
-    private float porcientoproteinasUser;
-    // porciento de los gramos de carbohidratos del usuario
-    private float porcientogcarbohidratosUser;
-    // porciento de los gramos de grasas del usuario
-    private float porcientoggrasasUser;
+    //nombre del usuario
+    private String nombreCompleto;
+    //proteinas  ingeridas por el usuario
+    private float proteinasIngeridas;
+    //carbohidratos   ingeridas por el usuario
+    private float carbohidratosIngeridos;
+    //grasas ingeridas por el usuario
+    private float grasasIngeridas;
+    //calorias totales ingeridas por el usuario
+    private float caloriasIngeridas;
 
     /**
-     * Constructor for objects of class Usuario
+     *Constructor de la clase usuario
      */
-    public Usuario(String user)
+    public Usuario (String nombreCompleto)
     {
-        this.user = user;
-        this.proteinasUser = 0;
-        this.gcarbohidratosUser = 0;
-        this.ggrasasUser = 0;
-        this.caloriasUsertotales = 0;
-        this.porcientoproteinasUser = 0;
-        this.porcientogcarbohidratosUser = 0;
-        this.porcientoggrasasUser = 0;
+        this.nombreCompleto = nombreCompleto;   
+        proteinasIngeridas = 0;
+        carbohidratosIngeridos = 0;
+        grasasIngeridas = 0;
+        caloriasIngeridas = 0;
     }
 
     /**
-     * metodo para dar de comer al usuario la cantidad de alimentos
+     * Metodo utilizado para dar de comer al usuario
      */
-    public void comida(Alimentos comida,float cantidad)
+    public void comer(Alimentos alimentoQueCome, float gramosDelAlimento)
     {
-        proteinasUser = proteinasUser +((comida.getGproteinas()/100)*cantidad);
-        gcarbohidratosUser = gcarbohidratosUser +((comida.getGcarbohidratos()/100)*cantidad);
-        ggrasasUser = ggrasasUser +((comida.getGgrasas()/100)*cantidad);
-        caloriasUsertotales=(proteinasUser*4)+(gcarbohidratosUser*4)+(ggrasasUser*9);
-
-        float totalgramos = proteinasUser + gcarbohidratosUser +  ggrasasUser;
-        porcientoproteinasUser = (proteinasUser*totalgramos)/100;
-        porcientogcarbohidratosUser = (gcarbohidratosUser*totalgramos)/100;
-        porcientoggrasasUser = (ggrasasUser*totalgramos)/100;
-
+        proteinasIngeridas = proteinasIngeridas + (alimentoQueCome.getProteinas() / 100 * gramosDelAlimento);
+        carbohidratosIngeridos = carbohidratosIngeridos + (alimentoQueCome.getCarbohidratos() / 100 * gramosDelAlimento);
+        grasasIngeridas = grasasIngeridas + (alimentoQueCome.getGrasas() / 100 * gramosDelAlimento);
+        caloriasIngeridas = caloriasIngeridas + (alimentoQueCome.getCalorias() / 100 * gramosDelAlimento);
     }
 
     /**
-     *muestras todos los datos del usuario que ha comido
-     * 
+     * Metodo que muestra la informacion de lo ingerido por el usuario.
      */
     public void muestraDatos()
     {
-        System.out.println("Nombre:"+user);
-        System.out.println("Gramos totales de proteinas ingeridos:"+ proteinasUser +"( "+ porcientoproteinasUser +"%)");
-        System.out.println("Gramos totales de carbohidratos ingeridos:"+ gcarbohidratosUser + "( " +porcientogcarbohidratosUser +"%)");
-        System.out.println("Gramos totales de grasas ingeridos:"+ ggrasasUser+"( "+porcientoggrasasUser +"%)");
-        System.out.println("Calorias totales ingeridas:"+ caloriasUsertotales);
+        float totalNutrientes = (proteinasIngeridas + grasasIngeridas + carbohidratosIngeridos) / 100;
+        String datosProteinas = "Gramos totales de proteinas ingeridos:     " + proteinasIngeridas;
+        String datosCarbohidratos = "Gramos totales de carbohidratos ingeridos: " +             carbohidratosIngeridos;
+        String datosGrasas = "Gramos totales de grasas ingeridos:        " + grasasIngeridas;
+        if (proteinasIngeridas > 0) {
+            datosProteinas = datosProteinas + " (" + proteinasIngeridas / totalNutrientes + "%)";
+        }
+        if (carbohidratosIngeridos > 0) {
+            datosCarbohidratos = datosCarbohidratos + " (" + carbohidratosIngeridos / totalNutrientes + "%      )";
+        }
+        if (grasasIngeridas > 0) {
+            datosGrasas = datosGrasas + " (" + grasasIngeridas / totalNutrientes + "%)";
+        }
+        System.out.println("Nombre:                                    " + nombreCompleto);
+        System.out.println(datosProteinas);    
+        System.out.println(datosCarbohidratos);
+        System.out.println(datosGrasas);
+        System.out.println("Calorias totales ingeridas:                " + caloriasIngeridas);  
+    }
 
+    
+    /**
+     * Devuelve los gramos de calorias ingeridas
+     */public float getCaloriasIngeridas()
+    {
+        return caloriasIngeridas;
+    }
+    
+    /**
+     * devuelve el nombre completo de usuario
+     */
+    
+    public String getNombreCompleto()
+    {
+        return nombreCompleto;
+    }
+
+    /**
+     * metodo que compara las calorias ingeridas por cada usuario y ns da a conocer las diferrencas
+     */
+    public void comparar (Usuario usuario2)
+    {
+        if (caloriasIngeridas > usuario2.getCaloriasIngeridas()){
+            System.out.println(nombreCompleto + " ha consumido mas calorias que "+usuario2.getNombreCompleto()+"("+caloriasIngeridas + "frete a" + usuario2.getCaloriasIngeridas()+")");
+
+        }
+        
+        else if (caloriasIngeridas < usuario2.getCaloriasIngeridas()){
+            System.out.println(usuario2.getNombreCompleto()+ " ha consumido mas calorias que "+ nombreCompleto+"("+ caloriasIngeridas + "frete a" + usuario2.getCaloriasIngeridas()+")");
+
+        }
+        
+        else {
+            System.out.println(nombreCompleto + " ha consumido iguales calorias que " +usuario2.getNombreCompleto()+"("+caloriasIngeridas + "frete a" + usuario2.getCaloriasIngeridas()+")");
+
+        }
     }
 }
+

@@ -85,7 +85,7 @@ public class Alimentos
      * devuelve los gramos de proteinas
      */
 
-    public float getGproteinas()
+    public float getProteinas()
     {
         return gproteinas;
     }
@@ -94,7 +94,7 @@ public class Alimentos
      * devuelve los gramos de hidratos
      */
 
-    public float getGcarbohidratos()
+    public float getCarbohidratos()
     {
         return gcarbohidratos;
     }
@@ -102,9 +102,14 @@ public class Alimentos
     /**   
      * devuelve los gramos de grasas
      */
-    public float getGgrasas()
+    public float getGrasas()
     {
         return ggrasas;
+    }
+    
+      public float getCalorias() 
+    {
+        return calorias;
     }
 
 
