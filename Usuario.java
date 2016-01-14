@@ -11,6 +11,10 @@ public class Usuario
     private float grasasIngeridas;
     //calorias totales ingeridas por el usuario
     private float caloriasIngeridas;
+    //alimento de mas calorias cosumidas por el usuario 
+    private String nombreMayorCaloria;
+    //mayores calorias del alimento hasta ahora
+    private float  numeroDeCaloriasMasAlimento;
 
     /**
      *Constructor de la clase usuario
@@ -22,6 +26,8 @@ public class Usuario
         carbohidratosIngeridos = 0;
         grasasIngeridas = 0;
         caloriasIngeridas = 0;
+        nombreMayorCaloria = null;
+        numeroDeCaloriasMasAlimento =0;
     }
 
     /**
@@ -33,6 +39,10 @@ public class Usuario
         carbohidratosIngeridos = carbohidratosIngeridos + (alimentoQueCome.getCarbohidratos() / 100 * gramosDelAlimento);
         grasasIngeridas = grasasIngeridas + (alimentoQueCome.getGrasas() / 100 * gramosDelAlimento);
         caloriasIngeridas = caloriasIngeridas + (alimentoQueCome.getCalorias() / 100 * gramosDelAlimento);
+        if (numeroDeCaloriasMasAlimento <= alimentoQueCome.getCalorias()){
+            numeroDeCaloriasMasAlimento = alimentoQueCome.getCalorias();
+            nombreMayorCaloria = alimentoQueCome.getNombre();
+        }
     }
 
     /**
@@ -60,7 +70,6 @@ public class Usuario
         System.out.println("Calorias totales ingeridas:                " + caloriasIngeridas);  
     }
 
-    
     /**
      * Devuelve los gramos de calorias ingeridas
      */public float getCaloriasIngeridas()
@@ -71,7 +80,7 @@ public class Usuario
     /**
      * devuelve el nombre completo de usuario
      */
-    
+
     public String getNombreCompleto()
     {
         return nombreCompleto;
@@ -86,18 +95,31 @@ public class Usuario
             System.out.println(nombreCompleto + " ha consumido mas calorias que "+usuario2.getNombreCompleto()+"("+caloriasIngeridas + "frete a" + usuario2.getCaloriasIngeridas()+")");
 
         }
-        
+
         else if (caloriasIngeridas < usuario2.getCaloriasIngeridas()){
             System.out.println(usuario2.getNombreCompleto()+ " ha consumido mas calorias que "+ nombreCompleto+"("+ caloriasIngeridas + "frete a" + usuario2.getCaloriasIngeridas()+")");
 
         }
-        
+
         else {
             System.out.println(nombreCompleto + " ha consumido iguales calorias que " +usuario2.getNombreCompleto()+"("+caloriasIngeridas + "frete a" + usuario2.getCaloriasIngeridas()+")");
 
         }
     }
-    
-    
-}
 
+    /**
+     * metodo para mostrar por pantalla el alimento mas calorico por 100g consumido por el usuario 
+     *
+     */
+    public void mayorescaloriascoonsumidas()
+    {
+
+        if (nombreMayorCaloria== null){
+            System.out.println("No has consumido ningun alimento");
+        }
+        else{
+             System.out.println("Alimento más calórico ingerido por este usuario hasta el momento:"+nombreMayorCaloria+"("+numeroDeCaloriasMasAlimento+" calorias por cada 100 gramos"+")" );
+        }
+    }
+
+}

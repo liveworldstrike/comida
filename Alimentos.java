@@ -17,6 +17,7 @@ public class Alimentos
     private float calorias;
     //nombre alimento
     private String nombre;
+    
 
     /**
      * Constructor for objects of class Alimentos
@@ -27,7 +28,6 @@ public class Alimentos
         this.gproteinas=gproteinas;
         this.gcarbohidratos=gcarbohidratos;
         this.ggrasas= ggrasas;
-
         calorias=(gproteinas*4)+(gcarbohidratos*4)+(ggrasas*9);
 
     }
@@ -107,10 +107,23 @@ public class Alimentos
         return ggrasas;
     }
     
-      public float getCalorias() 
+     /**
+     * devuelve las calorias 
+     */
+    public float getCalorias() 
     {
         return calorias;
     }
+    
+    /**
+     * devuelve nombre del alimento
+     */
+    public String getNombre()
+    {
+        return nombre;
+    }
+    
+    
 
 
 }
