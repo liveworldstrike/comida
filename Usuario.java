@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 public class Usuario
 {
     //nombre del usuario
@@ -15,6 +15,8 @@ public class Usuario
     private String nombreMayorCaloria;
     //mayores calorias del alimento hasta ahora
     private float  numeroDeCaloriasMasAlimento;
+    // An ArrayList guarda la posicion de los alimentos
+    private ArrayList<Alimentos> alimentos;
 
     /**
      *Constructor de la clase usuario
@@ -28,6 +30,7 @@ public class Usuario
         caloriasIngeridas = 0;
         nombreMayorCaloria = null;
         numeroDeCaloriasMasAlimento =0;
+        alimentos = new ArrayList<Alimentos>();
     }
 
     /**
@@ -43,6 +46,7 @@ public class Usuario
             numeroDeCaloriasMasAlimento = alimentoQueCome.getCalorias();
             nombreMayorCaloria = alimentoQueCome.getNombre();
         }
+        alimentos.add(alimentoQueCome);
     }
 
     /**
@@ -118,8 +122,21 @@ public class Usuario
             System.out.println("No has consumido ningun alimento");
         }
         else{
-             System.out.println("Alimento más calórico ingerido por este usuario hasta el momento:"+nombreMayorCaloria+"("+numeroDeCaloriasMasAlimento+" calorias por cada 100 gramos"+")" );
+            System.out.println("Alimento más calórico ingerido por este usuario hasta el momento:"+nombreMayorCaloria+"("+numeroDeCaloriasMasAlimento+" calorias por cada 100 gramos"+")" );
         }
     }
 
+    
+    public void muestraDatosAlimentosConsumidosSegunPosicion(int numeroDeLaLista)
+    {
+        numeroDeLaLista = numeroDeLaLista -1;
+        if(numeroDeLaLista >= 0 && numeroDeLaLista < alimentos.size()) {
+            System.out.println("alimento consumido en posicion"+(numeroDeLaLista+1));
+            Alimentos alimentoQueCome = alimentos.get(numeroDeLaLista);
+            alimentoQueCome.muestraDatos();
+        }
+        else{
+            System.out.println("El indice introducido no es correcto ");
+        }
+    }
 }

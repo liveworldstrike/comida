@@ -20,4 +20,6 @@ comment5.text=\r\n\ metodo\ que\ compara\ las\ calorias\ ingeridas\ por\ cada\ u
 comment6.params=
 comment6.target=void\ mayorescaloriascoonsumidas()
 comment6.text=\r\n\ metodo\ para\ mostrar\ por\ pantalla\ el\ alimento\ mas\ calorico\ por\ 100g\ consumido\ por\ el\ usuario\ \r\n\r\n
-numComments=7
+comment7.params=numeroDeLaLista
+comment7.target=void\ muestraDatosAlimentosConsumidosSegunPosicion(int)
+numComments=8

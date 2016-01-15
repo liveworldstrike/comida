@@ -18,6 +18,7 @@ public class Alimentos
     //nombre alimento
     private String nombre;
     
+    
 
     /**
      * Constructor for objects of class Alimentos
@@ -28,6 +29,7 @@ public class Alimentos
         this.gproteinas=gproteinas;
         this.gcarbohidratos=gcarbohidratos;
         this.ggrasas= ggrasas;
+        
         calorias=(gproteinas*4)+(gcarbohidratos*4)+(ggrasas*9);
 
     }
