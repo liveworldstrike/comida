@@ -129,17 +129,38 @@ public class Usuario
     /**
      * metodo que muestra los datos de un alimento segun la posicion de la lista en la que se encuentra
      */
-    
+
     public void muestraDatosAlimentosConsumidosSegunPosicion(int numeroDeLaLista)
     {
         numeroDeLaLista = numeroDeLaLista -1;
         if(numeroDeLaLista >= 0 && numeroDeLaLista < alimentos.size()) {
             System.out.println("alimento consumido en posicion"+(numeroDeLaLista+1));
-            Alimentos alimentoQueCome = alimentos.get(numeroDeLaLista);
-            alimentoQueCome.muestraDatos();
+            alimentos.get(numeroDeLaLista).muestraDatos();
         }
         else{
             System.out.println("El indice introducido no es correcto ");
         }
+    }
+
+    /**
+     * metodo que no muestra las veces que hemos comido un alimento
+     */
+    public void vecesQueElUsuarioCome(String nombreDelAlimento)
+    {
+        int cont = 0;
+        for ( Alimentos comidos : alimentos){
+            
+            if ((comidos.getNombre().contains( nombreDelAlimento))){
+                cont=cont+1;
+            }
+
+        }
+        if (cont == 0){
+            System.out.println("No se ha comido ninguna vez");
+        }
+        else{
+            System.out.println("El usuario " + nombreCompleto + " a comido " + cont + " veces el alimento");
+        }
+
     }
 }
