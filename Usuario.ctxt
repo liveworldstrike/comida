@@ -22,4 +22,5 @@ comment6.target=void\ mayorescaloriascoonsumidas()
 comment6.text=\r\n\ metodo\ para\ mostrar\ por\ pantalla\ el\ alimento\ mas\ calorico\ por\ 100g\ consumido\ por\ el\ usuario\ \r\n\r\n
 comment7.params=numeroDeLaLista
 comment7.target=void\ muestraDatosAlimentosConsumidosSegunPosicion(int)
+comment7.text=\r\n\ metodo\ que\ muestra\ los\ datos\ de\ un\ alimento\ segun\ la\ posicion\ de\ la\ lista\ en\ la\ que\ se\ encuentra\r\n
 numComments=8

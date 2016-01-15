@@ -126,6 +126,9 @@ public class Usuario
         }
     }
 
+    /**
+     * metodo que muestra los datos de un alimento segun la posicion de la lista en la que se encuentra
+     */
     
     public void muestraDatosAlimentosConsumidosSegunPosicion(int numeroDeLaLista)
     {
