@@ -149,7 +149,7 @@ public class Usuario
     {
         int cont = 0;
         for ( Alimentos comidos : alimentos){
-            
+
             if ((comidos.getNombre().contains( nombreDelAlimento))){
                 cont=cont+1;
             }
@@ -158,9 +158,38 @@ public class Usuario
         if (cont == 0){
             System.out.println("No se ha comido ninguna vez");
         }
-        else{
+        else if(cont == 1){
+            System.out.println("El usuario " + nombreCompleto + " solo lo a comido una vez ese alimento");
+        }
+        else if(cont>=2){
             System.out.println("El usuario " + nombreCompleto + " a comido " + cont + " veces el alimento");
         }
 
     }
+
+    public void nombreTodosLosAlimentosConsumidos()
+    {
+        for (Alimentos alimentosComidos : alimentos)
+        {
+            int cont = 0;
+            Alimentos alimentoComidosAhora = alimentosComidos;
+            for (Alimentos alimentosComidos1 : alimentos)
+            {
+                if (alimentoComidosAhora.getNombre().contains(alimentosComidos1.getNombre()))
+                {
+                    cont = cont+1;
+                }
+            }
+            if (cont> 1)
+            {
+                System.out.println("El alimento " + alimentoComidosAhora.getNombre() + " a sido comido " + cont + " veces.");
+            }
+            else
+            {
+                System.out.println("El alimento "+ alimentoComidosAhora.getNombre() +" no se comio mas de una vez");
+            }
+        }
+    }
+
+
 }

@@ -26,4 +26,6 @@ comment7.text=\r\n\ metodo\ que\ muestra\ los\ datos\ de\ un\ alimento\ segun\ l
 comment8.params=nombreDelAlimento
 comment8.target=void\ vecesQueElUsuarioCome(java.lang.String)
 comment8.text=\r\n\ metodo\ que\ no\ muestra\ las\ veces\ que\ hemos\ comido\ un\ alimento\r\n
-numComments=9
+comment9.params=
+comment9.target=void\ nombreTodosLosAlimentosConsumidos()
+numComments=10
